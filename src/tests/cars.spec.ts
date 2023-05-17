@@ -1,4 +1,5 @@
 import * as carService from "../services/carService";
+import { TestCase } from "../types/Cars";
 
 // cars api to return default car record
 
@@ -34,12 +35,6 @@ describe("Testing carService.addCar()", () => {
 });
 
 // cars api addCar function that returns an error
-
-interface TestCase {
-  model: any;
-  year: any;
-  expected: string;
-}
 
 const testCases: TestCase[] = [
   {

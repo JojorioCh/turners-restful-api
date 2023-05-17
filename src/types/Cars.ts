@@ -4,3 +4,14 @@ export interface Car {
   year: number;
   value: string;
 }
+
+export interface carInput {
+  model: string;
+  year: number;
+}
+
+export interface TestCase {
+  model: any;
+  year: any;
+  expected: string;
+}
