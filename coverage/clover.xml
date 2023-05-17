@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1684302073195" clover="3.2.0">
+  <project timestamp="1684302073195" name="All files">
+    <metrics statements="18" coveredstatements="18" conditionals="7" coveredconditionals="7" methods="4" coveredmethods="4" elements="29" coveredelements="29" complexity="0" loc="18" ncloc="18" packages="2" files="2" classes="2"/>
+    <package name="build.quoteGenerator">
+      <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <file name="quote.js" path="D:\Mission Ready HQ\Missions\LVL5-missions\mission-three\build\quoteGenerator\quote.js">
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="14" type="cond" truecount="4" falsecount="0"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.quoteGenerator">
+      <metrics statements="7" coveredstatements="7" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <file name="quote.ts" path="D:\Mission Ready HQ\Missions\LVL5-missions\mission-three\src\quoteGenerator\quote.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="14" type="cond" truecount="3" falsecount="0"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
