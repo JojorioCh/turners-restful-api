@@ -57,10 +57,10 @@ describe("String instead of Number", () => {
       riskRating: 3 as any,
     };
     expect(() => annualPrem(input)).toThrow(
-      "Invalid input values: Car value and risk rating must be numbers"
+      "Invalid input value(s): Car value and risk rating must be numbers"
     );
     expect(() => monthlyPrem(input)).toThrow(
-      "Invalid input values: Car value and risk rating must be numbers"
+      "Invalid input value(s): Car value and risk rating must be numbers"
     );
   });
 });
@@ -73,10 +73,10 @@ describe("0 as the value for either input", () => {
     };
 
     expect(() => annualPrem(input)).toThrow(
-      "Invalid input values: Zero values not allowed"
+      "Invalid input value(s): Zero is not allowed"
     );
     expect(() => monthlyPrem(input)).toThrow(
-      "Invalid input values: Zero values not allowed"
+      "Invalid input value(s): Zero is not allowed"
     );
   });
 });
@@ -157,5 +157,11 @@ describe("Updating specific parts of a quote", () => {
 
     expect(updatedQuote.carValue).toBe(8000);
     expect(updatedQuote.riskRating).toBe(3);
+
+    const updatedAnnualPremium = annualPrem(updatedQuote);
+    const updatedMonthlyPremium = monthlyPrem(updatedQuote);
+
+    expect(updatedQuote.annualPremium).toBe(updatedAnnualPremium);
+    expect(updatedQuote.monthlyPremium).toBe(updatedMonthlyPremium);
   });
 });

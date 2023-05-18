@@ -18,10 +18,10 @@ export const annualPrem = (input: valueInput): number => {
   const { carValue, riskRating } = input;
   if (typeof carValue !== "number" || typeof riskRating !== "number") {
     throw new Error(
-      "Invalid input values: Car value and risk rating must be numbers"
+      "Invalid input value(s): Car value and risk rating must be numbers"
     );
   } else if (carValue === 0 || riskRating === 0) {
-    throw new Error("Invalid input values: Zero values not allowed");
+    throw new Error("Invalid input value(s): Zero is not allowed");
   }
   const yPrem2Decimals =
     Math.round(((carValue * riskRating) / 100) * 100) / 100;
@@ -76,11 +76,13 @@ export const updateAQuote = (quoteId: number, input: valueInput) => {
   if (!matchedAQuote) {
     throw new Error("Quote not found");
   }
-  const updatePartially = {
+  const updatedQuote = {
     ...matchedAQuote,
     carValue: input.carValue ?? matchedAQuote.carValue,
     riskRating: input.riskRating ?? matchedAQuote.riskRating,
   };
+  updatedQuote.annualPremium = annualPrem(updatedQuote);
+  updatedQuote.monthlyPremium = monthlyPrem(updatedQuote);
 
-  return updatePartially;
+  return updatedQuote;
 };
