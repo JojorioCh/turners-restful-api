@@ -44,17 +44,5 @@ export const computeValue = (model: string, year: number) => {
     throw new RangeError("The result is infinity");
   }
 
-  return NZDollar.format(result);
-};
-
-let NZDollar = new Intl.NumberFormat("en-NZ", {
-  style: "currency",
-  currency: "NZD",
-});
-
-export const sum = (input1: any, input2: any) => {
-  if (typeof input1 !== "number" || typeof input2 !== "number") {
-    throw "Error";
-  }
-  return input1 + input2;
+  return result;
 };
