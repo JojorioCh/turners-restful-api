@@ -23,12 +23,16 @@ export const annualPrem = (input: valueInput): number => {
   } else if (carValue === 0 || riskRating === 0) {
     throw new Error("Invalid input values: Zero values not allowed");
   }
-  return Math.round(((carValue * riskRating) / 100) * 100) / 100;
+  const yPrem2Decimals =
+    Math.round(((carValue * riskRating) / 100) * 100) / 100;
+  return yPrem2Decimals;
 };
 
 export const monthlyPrem = (input: valueInput): number => {
   const yearlyPremium = annualPrem(input);
-  return Math.round((yearlyPremium / 12) * 100) / 100;
+  const mPrem2Decimals = Math.round((yearlyPremium / 12) * 100) / 100;
+
+  return mPrem2Decimals;
 };
 
 export const createAQuote = (input: valueInput) => {
@@ -62,32 +66,21 @@ export const deleteAQuote = (quoteId: number) => {
     throw new Error("Quote not found");
   }
   quotes = quotes.filter((q) => q.id !== quoteId);
-  
+
   return true;
 };
 
-// export const updateAQuote = (quoteId: number) => {
-//   const matchedAQuote = findQuoteById(quoteId)
+export const updateAQuote = (quoteId: number, input: valueInput) => {
+  const matchedAQuote = findQuoteById(quoteId);
 
-//   if (!matchedAQuote) {
-//     throw new Error('Quote not found')
-//   }
-//  const adjustQuote = {
-//   matchedAQuote.carValue = quotes.carValue,
-//   matchedAQuote.riskRating = quotes.riskRating
-// }
-//   return adjustQuote
-// }
+  if (!matchedAQuote) {
+    throw new Error("Quote not found");
+  }
+  const updatePartially = {
+    ...matchedAQuote,
+    carValue: input.carValue ?? matchedAQuote.carValue,
+    riskRating: input.riskRating ?? matchedAQuote.riskRating,
+  };
 
-// export const updatePartOfQuote = (quote: number) => {
-//   const matchedAQuote = quotes.find((q) => q.id === quote.id)
-
-//   if (!matchedAQuote) {
-//     throw new Error('Quote not found')
-//   }
-
-//   matchedAQuote.name = Quote.name ?? matchedQuote.name
-//   matchedQuote.description = Quote.description ?? matchedQuote.description
-
-//   return matchedQuote
-// }
+  return updatePartially;
+};

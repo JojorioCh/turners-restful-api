@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import * as quoteGenerator from "../quoteGenerator/quote";
-import { valueInput } from "../types/interfaces";
+import { valueInput, Quote } from "../types/interfaces";
 
 export const getAllQuotes = (req: Request, res: Response) => {
   const quotes = quoteGenerator.getAllQuotes();
@@ -17,64 +17,45 @@ export const createAQuote = (req: Request, res: Response) => {
   res.send(newQuote);
 };
 
-//   export const getOneTask = (req, res) => {
-//     const taskId = parseInt(req.params.id)
+export const pullUpAQuote = (req: Request, res: Response) => {
+  const quoteId = parseInt(req.params.id);
 
-//     try {
-//       const matchedTask = taskService.getOneTask(taskId)
-//       res.send(matchedTask)
-//     } catch (e) {
-//       res.status(404).send(e)
-//     }
-//   }
+  try {
+    const matchedQuote = quoteGenerator.pullUpAQuote(quoteId);
+    res.send(matchedQuote);
+  } catch (e) {
+    res.status(404).send(e);
+  }
+};
 
-//   export const deleteTask = (req, res) => {
-//     const taskId = parseInt(req.params.id)
+export const deleteAQuote = (req: Request, res: Response) => {
+  const quoteId = parseInt(req.params.id);
 
-//     try {
-//       const hasDeleted = taskService.deleteTask(taskId)
-//       if (hasDeleted) {
-//         res.send(`Task ${taskId} deleted successfully!`)
-//       } else {
-//         res.status(500, send(`Task ${taskId} deletion failed!`))
-//       }
-//     } catch (e) {
-//       res.status(404).send(e)
-//     }
-//   }
+  try {
+    const quoteDeleted = quoteGenerator.deleteAQuote(quoteId);
+    if (quoteDeleted) {
+      res.send(`Task ${quoteId} deleted successfully!`);
+    } else {
+      res.status(500).send(`Task ${quoteId} deletion failed!`);
+    }
+  } catch (e) {
+    res.status(404).send(e);
+  }
+};
 
-//   export const updateTask = (req, res) => {
-//     const taskId = parseInt(req.params.id)
+export const updateAQuote = (req: Request, res: Response) => {
+  const quoteId = parseInt(req.params.id);
 
-//     const name = req.body.name
-//     const description = req.body.description
+  const carValue = req.body.carValue;
+  const riskRating = req.body.riskRating;
 
-//     try {
-//       const updatedTask = taskService.updateTask({
-//         id: taskId,
-//         name,
-//         description,
-//       })
-//       res.send(updatedTask)
-//     } catch (e) {
-//       res.status(404).send(e)
-//     }
-//   }
-
-//   export const updateTaskPartial = (req, res) => {
-//     const taskId = parseInt(req.params.id)
-
-//     const name = req.body.name
-//     const description = req.body.description
-
-//     try {
-//       const updatedTask = taskService.updateTaskPartial({
-//         id: taskId,
-//         name,
-//         description,
-//       })
-//       res.send(updatedTask)
-//     } catch (e) {
-//       res.status(404).send(e)
-//     }
-// }
+  try {
+    const updatedQuote = quoteGenerator.updateAQuote(quoteId, {
+      carValue,
+      riskRating,
+    });
+    res.send(updatedQuote);
+  } catch (e) {
+    res.status(404).send(e);
+  }
+};

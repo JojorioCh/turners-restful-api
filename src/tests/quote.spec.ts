@@ -4,6 +4,7 @@ import {
   createAQuote,
   pullUpAQuote,
   deleteAQuote,
+  updateAQuote,
 } from "../quoteGenerator/quote";
 import { quoteTestCase, valueInput, Quote } from "../types/interfaces";
 
@@ -120,6 +121,13 @@ const quotes: Quote[] = [
     annualPremium: 330.65,
     monthlyPremium: 27.55,
   },
+  {
+    id: 2,
+    carValue: 6613,
+    riskRating: 5,
+    annualPremium: 330.65,
+    monthlyPremium: 27.55,
+  },
 ];
 
 describe("deletes the Quote", () => {
@@ -134,5 +142,20 @@ describe("deletes the Quote", () => {
     expect(() => {
       deleteAQuote(quoteId);
     }).toThrow("Quote not found");
+  });
+});
+
+describe("Updating specific parts of a quote", () => {
+  test("should update specific parts of the quote", () => {
+    const quoteId = 2;
+    const input: valueInput = {
+      carValue: 8000,
+      riskRating: 3,
+    };
+
+    const updatedQuote = updateAQuote(quoteId, input);
+
+    expect(updatedQuote.carValue).toBe(8000);
+    expect(updatedQuote.riskRating).toBe(3);
   });
 });
