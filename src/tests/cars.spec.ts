@@ -1,5 +1,5 @@
 import * as carService from "../services/carService";
-import { TestCase } from "../types/Cars";
+import { TestCase, carInput } from "../types/Cars";
 
 // cars api to return default car record
 
@@ -101,5 +101,55 @@ describe("Testing carService.addCar() to return an error", () => {
         carService.addCar(input);
       }).toThrow(expected);
     });
+  });
+});
+
+// cars api to update a car record
+
+describe("Testing carService.updateCar", () => {
+  test(`Should update the model and year of car record with id 2 and value computed should change to $10,315.00 `, () => {
+    //Arrange
+    const id = 2;
+    const input: carInput = {
+      model: "Prius",
+      year: 2015,
+    };
+
+    //Act
+    const actual = carService.updateCar(id, input);
+
+    //Assert
+    expect(actual.model).toBe("Prius");
+    expect(actual.year).toBe(2015);
+    expect(actual.value).toBe("$10,315.00");
+  });
+});
+
+describe("Testing carService.patchCar", () => {
+  test(`Should update the year to 2014 and value computed should change to $10,314.00`, () => {
+    //Arrange
+    const id = 2;
+    const model = "Prius";
+    const year = 2014;
+
+    //Act
+    const actual = carService.patchCar(id, model, year);
+
+    //Assert
+    expect(actual.year).toBe(2014);
+    expect(actual.value).toBe("$10,314.00");
+  });
+});
+
+describe("Testing carService.deleteCar", () => {
+  test(`Should delete the record with id 2`, () => {
+    //Arrange
+    const id = 2;
+
+    //Act
+    const actual = carService.deleteCar(id);
+
+    //Assert
+    expect(actual).toEqual("Record ID 2 has been deleted successfully.");
   });
 });

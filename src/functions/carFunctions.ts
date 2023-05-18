@@ -1,5 +1,5 @@
 export const checkModel = (str: string) => {
-  if (str.trim() === "") throw "Model is empty.";
+  if (str === "") throw "Model is empty.";
   if (typeof str === "string" && /^[a-zA-Z]+$/.test(str)) {
     return str;
   } else {

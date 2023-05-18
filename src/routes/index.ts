@@ -9,7 +9,7 @@ router.post("/", carController.addCar);
 
 router.get("/:id", carController.getOneCar);
 
-router.put("/:id", carController.UpdateCar);
+router.put("/:id", carController.updateCar);
 
 router.patch("/:id", carController.patchCar);
 

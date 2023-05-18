@@ -32,7 +32,7 @@ export const getOneCar = (req: Request, res: Response) => {
   }
 };
 
-export const UpdateCar = (req: Request, res: Response) => {
+export const updateCar = (req: Request, res: Response) => {
   try {
     const carID = parseInt(req.params.id);
     const model = req.body.model;
@@ -43,7 +43,7 @@ export const UpdateCar = (req: Request, res: Response) => {
       year: year,
     };
 
-    const response = carService.UpdateCar(carID, input);
+    const response = carService.updateCar(carID, input);
 
     res.send(response);
   } catch (e) {

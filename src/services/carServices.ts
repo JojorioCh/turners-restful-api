@@ -28,7 +28,7 @@ export const getOneCar = (carID: number) => {
   return matchedRecord;
 };
 
-export const UpdateCar = (carID: number, input: carInput) => {
+export const updateCar = (carID: number, input: carInput) => {
   const matchedRecord = carRecords.find((t) => t.id === carID);
   if (!matchedRecord) {
     throw "No record found.";
