@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import * as quoteGenerator from "../services/quote";
-import { valueInput, Quote } from "../types/Cars";
+import { valueInput, Quote } from "../types/Interface";
 
 export const getAllQuotes = (req: Request, res: Response) => {
   const quotes = quoteGenerator.getAllQuotes();

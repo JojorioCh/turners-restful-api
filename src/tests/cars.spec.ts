@@ -1,5 +1,5 @@
 import * as carService from "../services/carService";
-import { TestCase, carInput } from "../types/Cars";
+import { TestCase, carInput } from "../types/Interface";
 
 // cars api to return default car record
 
