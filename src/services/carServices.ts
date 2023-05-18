@@ -1,5 +1,5 @@
 import { computeValue } from "../functions/carFunctions";
-import { Car, carInput } from "../types/Cars";
+import { Car, carInput } from "../types/Interface";
 
 let carRecords: Car[] = [
   { id: 1, model: "Civic", year: 2014, value: "$6,614.00" },
