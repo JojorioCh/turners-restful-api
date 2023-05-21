@@ -9,7 +9,7 @@
     "build": "tsc"
   },
   "keywords": [],
-  "author": "Aubrey Mina and Joseph Chang",
+  "author": "Joseph Chang and Aubrey Mina",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.17",
