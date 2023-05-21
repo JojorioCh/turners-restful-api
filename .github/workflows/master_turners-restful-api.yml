@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'Turners-Restful-API'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9394388BDD9744F58C41ED0B2EAC7F91 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_715CD3A11AFE4E25ACB76F887A24E025 }}
           package: .
