@@ -1,97 +1,166 @@
-import { annualPrem, monthlyPrem } from "../quoteGenerator/quote";
+import {
+  annualPrem,
+  monthlyPrem,
+  createAQuote,
+  pullUpAQuote,
+  deleteAQuote,
+  updateAQuote,
+} from '../services/quote'
+import { quoteTestCase, valueInput, Quote } from '../types/Interface'
 
-test("calculates annual and monthly premiums correctly", () => {
-  const carValue = 6613;
-  const riskRating = 5;
-  const annualExpected = 330.65;
-  const monthlyExpected = 27.55;
+const QuoteTestCases: quoteTestCase[] = [
+  {
+    carValue: 5000,
+    riskRating: 1,
+    expectedAnnual: 50.0,
+    expectedMonthly: 4.17,
+  },
+  {
+    carValue: 2000,
+    riskRating: 5,
+    expectedAnnual: 100,
+    expectedMonthly: 8.33,
+  },
+  {
+    carValue: 44000,
+    riskRating: 1,
+    expectedAnnual: 440,
+    expectedMonthly: 36.67,
+  },
+  {
+    carValue: 44000,
+    riskRating: 5,
+    expectedAnnual: 2200,
+    expectedMonthly: 183.33,
+  },
+]
+describe('Quote calculation using car values and risk ratings', () => {
+  QuoteTestCases.forEach((testCase, index) => {
+    test(`calculates annual and monthly premiums correctly for test case ${
+      index + 1
+    }`, () => {
+      const { carValue, riskRating, expectedAnnual, expectedMonthly } = testCase
+      const input: valueInput = { carValue, riskRating }
+      const actualAnnual = annualPrem(input)
+      const actualMonthly = monthlyPrem(input)
+      expect(actualAnnual).toBe(expectedAnnual)
+      expect(actualMonthly).toBe(expectedMonthly)
+    })
+  })
+})
 
-  const annualActual = annualPrem(carValue, riskRating);
-  const monthlyActual = monthlyPrem(carValue, riskRating);
+describe('String instead of Number', () => {
+  test('should return an error instead of yearly/monthly premium', () => {
+    const input: valueInput = {
+      carValue: 'five hunnit' as any,
+      riskRating: 3 as any,
+    }
+    expect(() => annualPrem(input)).toThrow(
+      'Invalid input value(s): Car value and risk rating must be numbers'
+    )
+    expect(() => monthlyPrem(input)).toThrow(
+      'Invalid input value(s): Car value and risk rating must be numbers'
+    )
+  })
+})
 
-  expect(annualActual).toBeCloseTo(annualExpected, 2);
-  expect(monthlyActual).toBeCloseTo(monthlyExpected, 2);
-});
+describe('0 as the value for either input', () => {
+  test('should return an error instead of yearly/monthly premium', () => {
+    const input: valueInput = {
+      carValue: 5000,
+      riskRating: 0,
+    }
 
-test("calculates annual and monthly premiums correctly", () => {
-  const carValue = 5000;
-  const riskRating = 1;
-  const annualExpected = 50.0;
-  const monthlyExpected = 4.17;
+    expect(() => annualPrem(input)).toThrow(
+      'Invalid input value(s): Zero is not allowed'
+    )
+    expect(() => monthlyPrem(input)).toThrow(
+      'Invalid input value(s): Zero is not allowed'
+    )
+  })
+})
 
-  const annualActual = annualPrem(carValue, riskRating);
-  const monthlyActual = monthlyPrem(carValue, riskRating);
+describe('New Quote function', () => {
+  test('to see if annual and monthly premiums are calculated correctly', () => {
+    const input: valueInput = {
+      carValue: 34990,
+      riskRating: 3,
+    }
 
-  expect(annualActual).toBeCloseTo(annualExpected, 2);
-  expect(monthlyActual).toBeCloseTo(monthlyExpected, 2);
-});
+    const expectedAnnual = 1049.7
+    const expectedMonthly = 87.48
 
-test("calculates annual and monthly premiums correctly", () => {
-  const carValue = 2000;
-  const riskRating = 5;
-  const annualExpected = 100;
-  const monthlyExpected = 8.33;
+    const { annualPremium, monthlyPremium } = createAQuote(input)
 
-  const annualActual = annualPrem(carValue, riskRating);
-  const monthlyActual = monthlyPrem(carValue, riskRating);
+    expect(annualPremium).toBe(expectedAnnual)
+    expect(monthlyPremium).toBe(expectedMonthly)
+  })
+})
 
-  expect(annualActual).toBeCloseTo(annualExpected, 2);
-  expect(monthlyActual).toBeCloseTo(monthlyExpected, 2);
-});
+describe('Brings up the Quote', () => {
+  test('should return the matching quote', () => {
+    const quoteId = 1
+    const quote = pullUpAQuote(quoteId)
+    expect(quote.id).toBe(quoteId)
+  })
 
-test("calculates annual and monthly premiums correctly", () => {
-  const carValue = 44000;
-  const riskRating = 1;
-  const annualExpected = 440.0;
-  const monthlyExpected = 36.67;
+  test('should throw an error if quote not found', () => {
+    const quoteId = 999
+    expect(() => {
+      pullUpAQuote(quoteId)
+    }).toThrow('Quote not found')
+  })
+})
 
-  const annualActual = annualPrem(carValue, riskRating);
-  const monthlyActual = monthlyPrem(carValue, riskRating);
+const quotes: Quote[] = [
+  {
+    id: 1,
+    carValue: 6613,
+    riskRating: 5,
+    annualPremium: 330.65,
+    monthlyPremium: 27.55,
+  },
+  {
+    id: 2,
+    carValue: 6613,
+    riskRating: 5,
+    annualPremium: 330.65,
+    monthlyPremium: 27.55,
+  },
+]
 
-  expect(annualActual).toBeCloseTo(annualExpected, 2);
-  expect(monthlyActual).toBeCloseTo(monthlyExpected, 2);
-});
+describe('deletes the Quote', () => {
+  test('should delete the matching quote', () => {
+    const quoteId = 1
+    const result = deleteAQuote(quoteId)
+    expect(result).toBe(true)
+  })
 
-test("calculates annual and monthly premiums correctly", () => {
-  const carValue = 2000;
-  const riskRating = 1;
-  const annualExpected = 20.0;
-  const monthlyExpected = 1.67;
+  test('should throw an error if quote not found', () => {
+    const quoteId = 999
+    expect(() => {
+      deleteAQuote(quoteId)
+    }).toThrow('Quote not found')
+  })
+})
 
-  const annualActual = annualPrem(carValue, riskRating);
-  const monthlyActual = monthlyPrem(carValue, riskRating);
+describe('Updating specific parts of a quote', () => {
+  test('should update specific parts of the quote', () => {
+    const quoteId = 2
+    const input: valueInput = {
+      carValue: 8000,
+      riskRating: 3,
+    }
 
-  expect(annualActual).toBeCloseTo(annualExpected, 2);
-  expect(monthlyActual).toBeCloseTo(monthlyExpected, 2);
-});
+    const updatedQuote = updateAQuote(quoteId, input)
 
-test("calculates annual and monthly premiums correctly", () => {
-  const carValue = 44000;
-  const riskRating = 5;
-  const annualExpected = 2200;
-  const monthlyExpected = 183.33;
+    expect(updatedQuote.carValue).toBe(8000)
+    expect(updatedQuote.riskRating).toBe(3)
 
-  const annualActual = annualPrem(carValue, riskRating);
-  const monthlyActual = monthlyPrem(carValue, riskRating);
+    const updatedAnnualPremium = annualPrem(updatedQuote)
+    const updatedMonthlyPremium = monthlyPrem(updatedQuote)
 
-  expect(annualActual).toBeCloseTo(annualExpected, 2);
-  expect(monthlyActual).toBeCloseTo(monthlyExpected, 2);
-});
-
-test("throws an error for having a car value of 0", () => {
-  const carValue = 0;
-  const riskRating = 5;
-
-  expect(() => {
-    annualPrem(carValue, riskRating);
-  }).toThrow("Invalid input values: Zero values not allowed");
-});
-
-test("throws an error for having a risk rating of 0", () => {
-  const carValue = 10000;
-  const riskRating = 0;
-
-  expect(() => {
-    annualPrem(carValue, riskRating);
-  }).toThrow("Invalid input values: Zero values not allowed");
-});
+    expect(updatedQuote.annualPremium).toBe(updatedAnnualPremium)
+    expect(updatedQuote.monthlyPremium).toBe(updatedMonthlyPremium)
+  })
+})
