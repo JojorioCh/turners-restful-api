@@ -1,61 +1,48 @@
-import { Request, Response } from "express";
-import * as quoteGenerator from "../services/quote";
-import { valueInput, Quote } from "../types/Cars";
+export const computeValue = (model: string, year: number) => {
+  const mdl = computeModel(checkModel(model))
+  const yr = checkYear(year)
 
-export const getAllQuotes = (req: Request, res: Response) => {
-  const quotes = quoteGenerator.getAllQuotes();
-  res.send(quotes);
-};
-
-export const createAQuote = (req: Request, res: Response) => {
-  const input: valueInput = {
-    carValue: req.body.carValue,
-    riskRating: req.body.riskRating,
-  };
-  const newQuote = quoteGenerator.createAQuote(input);
-
-  res.send(newQuote);
-};
-
-export const pullUpAQuote = (req: Request, res: Response) => {
-  const quoteId = parseInt(req.params.id);
-
-  try {
-    const matchedQuote = quoteGenerator.pullUpAQuote(quoteId);
-    res.send(matchedQuote);
-  } catch (e) {
-    res.status(404).send(e);
+  if (typeof mdl !== 'number' || typeof yr !== 'number') {
+    throw 'Make sure to input model (string) and year (number) correctly.'
   }
-};
 
-export const deleteAQuote = (req: Request, res: Response) => {
-  const quoteId = parseInt(req.params.id);
+  const result = mdl + yr
 
-  try {
-    const quoteDeleted = quoteGenerator.deleteAQuote(quoteId);
-    if (quoteDeleted) {
-      res.send(`Task ${quoteId} deleted successfully!`);
-    } else {
-      res.status(500).send(`Task ${quoteId} deletion failed!`);
-    }
-  } catch (e) {
-    res.status(404).send(e);
+  if (!result) {
+    throw 'Make sure to input model and year correctly.'
   }
-};
 
-export const updateAQuote = (req: Request, res: Response) => {
-  const quoteId = parseInt(req.params.id);
-
-  const carValue = req.body.carValue;
-  const riskRating = req.body.riskRating;
-
-  try {
-    const updatedQuote = quoteGenerator.updateAQuote(quoteId, {
-      carValue,
-      riskRating,
-    });
-    res.send(updatedQuote);
-  } catch (e) {
-    res.status(404).send(e);
+  if (result === Infinity) {
+    throw new RangeError('The result is infinity')
   }
-};
+
+  return result
+}
+
+const checkModel = (str: string) => {
+  if (str === '') throw 'Model is empty.'
+  if (typeof str === 'string' && /^[a-zA-Z]+$/.test(str)) {
+    return str
+  } else {
+    throw `Please input a valid model. A string of alphabet with no spaces is accepted.`
+  }
+}
+
+const checkYear = (num: number) => {
+  var currentDate = new Date()
+  if (num === undefined) throw 'Year is empty.'
+  if (num < 1950 || num > currentDate.getFullYear())
+    throw `Please input a valid year from 1950 to ${currentDate.getFullYear()}`
+  if (typeof num !== 'number') throw `Year should be a number.`
+  return num
+}
+
+const computeModel = (str: string) => {
+  checkModel(str)
+  let output = 0
+  const char = str.toUpperCase().split('')
+  char.map((char) => {
+    output += char.charCodeAt(0) - 64
+  })
+  return output * 100
+}
