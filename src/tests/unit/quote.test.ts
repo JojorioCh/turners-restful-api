@@ -5,8 +5,8 @@ import {
   pullUpAQuote,
   deleteAQuote,
   updateAQuote,
-} from '../services/quote'
-import { quoteTestCase, valueInput, Quote } from '../types/Interface'
+} from '../../services/quote'
+import { quoteTestCase, valueInput, Quote } from '../../types/Interface'
 
 const QuoteTestCases: quoteTestCase[] = [
   {
