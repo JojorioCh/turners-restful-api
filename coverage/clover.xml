@@ -1,96 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684646490989" clover="3.2.0">
-  <project timestamp="1684646490989" name="All files">
-    <metrics statements="233" coveredstatements="221" conditionals="105" coveredconditionals="85" methods="52" coveredmethods="50" elements="390" coveredelements="356" complexity="0" loc="233" ncloc="233" packages="4" files="6" classes="6"/>
-    <package name="build.functions">
-      <metrics statements="36" coveredstatements="31" conditionals="22" coveredconditionals="17" methods="5" coveredmethods="5"/>
-      <file name="carFunctions.js" path="C:\Users\Mina\Desktop\Aubrey\Missions\TurnersRestfulAPI\build\functions\carFunctions.js">
-        <metrics statements="36" coveredstatements="31" conditionals="22" coveredconditionals="17" methods="5" coveredmethods="5"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="12" type="stmt"/>
-        <line num="6" count="7" type="stmt"/>
-        <line num="7" count="3" type="cond" truecount="3" falsecount="1"/>
+<coverage generated="1684876472506" clover="3.2.0">
+  <project timestamp="1684876472506" name="All files">
+    <metrics statements="340" coveredstatements="313" conditionals="140" coveredconditionals="101" methods="70" coveredmethods="63" elements="550" coveredelements="477" complexity="0" loc="340" ncloc="340" packages="6" files="8" classes="8"/>
+    <package name="build.controller">
+      <metrics statements="66" coveredstatements="52" conditionals="35" coveredconditionals="14" methods="12" coveredmethods="7"/>
+      <file name="carController.js" path="C:\Users\Mina\Desktop\Aubrey\Missions\TurnersRestfulAPI\build\controller\carController.js">
+        <metrics statements="66" coveredstatements="52" conditionals="35" coveredconditionals="14" methods="12" coveredmethods="7"/>
+        <line num="2" count="1" type="cond" truecount="4" falsecount="1"/>
+        <line num="3" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="cond" truecount="0" falsecount="8"/>
+        <line num="6" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="11" count="3" type="cond" truecount="1" falsecount="1"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="14" count="3" type="cond" truecount="1" falsecount="1"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="17" count="3" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="19" type="cond" truecount="2" falsecount="0"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="18" type="cond" truecount="4" falsecount="0"/>
-        <line num="24" count="14" type="stmt"/>
-        <line num="27" count="4" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="31" count="7" type="stmt"/>
-        <line num="32" count="7" type="cond" truecount="1" falsecount="1"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="34" count="7" type="cond" truecount="4" falsecount="0"/>
-        <line num="35" count="4" type="stmt"/>
-        <line num="36" count="3" type="cond" truecount="1" falsecount="1"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="38" count="3" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="41" count="7" type="stmt"/>
-        <line num="42" count="7" type="stmt"/>
-        <line num="43" count="7" type="stmt"/>
-        <line num="44" count="7" type="stmt"/>
-        <line num="45" count="35" type="stmt"/>
-        <line num="47" count="7" type="stmt"/>
-      </file>
-    </package>
-    <package name="build.services">
-      <metrics statements="92" coveredstatements="90" conditionals="38" coveredconditionals="33" methods="21" coveredmethods="20"/>
-      <file name="carService.js" path="C:\Users\Mina\Desktop\Aubrey\Missions\TurnersRestfulAPI\build\services\carService.js">
-        <metrics statements="43" coveredstatements="43" conditionals="16" coveredconditionals="14" methods="11" coveredmethods="11"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="10" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="23" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="24" count="1" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="4" falsecount="1"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="19" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="6"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
-        <line num="30" count="4" type="stmt"/>
-        <line num="31" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="41" count="4" type="stmt"/>
-        <line num="42" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="45" count="1" type="cond" truecount="3" falsecount="1"/>
-        <line num="46" count="1" type="cond" truecount="3" falsecount="1"/>
-        <line num="47" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="52" count="3" type="stmt"/>
-        <line num="53" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="54" count="1" type="stmt"/>
-        <line num="56" count="2" type="stmt"/>
-        <line num="57" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="52" count="2" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
         <line num="59" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="2" type="stmt"/>
+        <line num="62" count="2" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
+        <line num="65" count="2" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="78" count="2" type="stmt"/>
+        <line num="79" count="2" type="stmt"/>
+        <line num="80" count="2" type="stmt"/>
+        <line num="81" count="2" type="stmt"/>
+        <line num="82" count="2" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="91" count="2" type="stmt"/>
+        <line num="92" count="2" type="stmt"/>
+        <line num="93" count="2" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="97" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="build.functions">
+      <metrics statements="36" coveredstatements="31" conditionals="22" coveredconditionals="17" methods="5" coveredmethods="5"/>
+      <file name="carFunctions.js" path="C:\Users\Mina\Desktop\Aubrey\Missions\TurnersRestfulAPI\build\functions\carFunctions.js">
+        <metrics statements="36" coveredstatements="31" conditionals="22" coveredconditionals="17" methods="5" coveredmethods="5"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="15" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+        <line num="7" count="6" type="cond" truecount="3" falsecount="1"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="11" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="25" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="24" type="cond" truecount="4" falsecount="0"/>
+        <line num="24" count="20" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="10" type="stmt"/>
+        <line num="32" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="10" type="cond" truecount="4" falsecount="0"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="36" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="6" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="10" type="stmt"/>
+        <line num="42" count="10" type="stmt"/>
+        <line num="43" count="10" type="stmt"/>
+        <line num="44" count="10" type="stmt"/>
+        <line num="45" count="49" type="stmt"/>
+        <line num="47" count="10" type="stmt"/>
+      </file>
+    </package>
+    <package name="build.services">
+      <metrics statements="92" coveredstatements="90" conditionals="38" coveredconditionals="34" methods="21" coveredmethods="20"/>
+      <file name="carService.js" path="C:\Users\Mina\Desktop\Aubrey\Missions\TurnersRestfulAPI\build\services\carService.js">
+        <metrics statements="43" coveredstatements="43" conditionals="16" coveredconditionals="15" methods="11" coveredmethods="11"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="11" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="23" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="8" type="stmt"/>
+        <line num="31" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="8" type="stmt"/>
+        <line num="42" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="45" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="46" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="52" count="6" type="stmt"/>
+        <line num="53" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="56" count="4" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
       </file>
       <file name="quote.js" path="C:\Users\Mina\Desktop\Aubrey\Missions\TurnersRestfulAPI\build\services\quote.js">
         <metrics statements="49" coveredstatements="47" conditionals="22" coveredconditionals="19" methods="10" coveredmethods="9"/>
@@ -145,81 +217,128 @@
         <line num="78" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="src.controller">
+      <metrics statements="41" coveredstatements="40" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+      <file name="carController.ts" path="C:\Users\Mina\Desktop\Aubrey\Missions\TurnersRestfulAPI\src\controller\carController.ts">
+        <metrics statements="41" coveredstatements="40" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="60" count="2" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="70" count="2" type="stmt"/>
+        <line num="71" count="2" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="src.functions">
       <metrics statements="30" coveredstatements="27" conditionals="15" coveredconditionals="10" methods="5" coveredmethods="5"/>
       <file name="carFunctions.ts" path="C:\Users\Mina\Desktop\Aubrey\Missions\TurnersRestfulAPI\src\functions\carFunctions.ts">
         <metrics statements="30" coveredstatements="27" conditionals="15" coveredconditionals="10" methods="5" coveredmethods="5"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="12" type="stmt"/>
-        <line num="3" count="7" type="stmt"/>
-        <line num="5" count="3" type="cond" truecount="2" falsecount="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="15" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="5" count="6" type="cond" truecount="2" falsecount="1"/>
         <line num="6" count="0" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="11" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="11" count="6" type="cond" truecount="0" falsecount="1"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="15" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="15" count="6" type="cond" truecount="0" falsecount="1"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="19" count="3" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="19" type="cond" truecount="1" falsecount="0"/>
-        <line num="24" count="18" type="cond" truecount="4" falsecount="0"/>
-        <line num="25" count="14" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="25" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="24" type="cond" truecount="4" falsecount="0"/>
+        <line num="25" count="20" type="stmt"/>
         <line num="27" count="4" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="7" type="stmt"/>
-        <line num="33" count="7" type="cond" truecount="0" falsecount="1"/>
-        <line num="34" count="7" type="cond" truecount="3" falsecount="0"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="10" type="stmt"/>
+        <line num="33" count="10" type="cond" truecount="0" falsecount="1"/>
+        <line num="34" count="10" type="cond" truecount="3" falsecount="0"/>
         <line num="35" count="4" type="stmt"/>
-        <line num="36" count="3" type="cond" truecount="0" falsecount="1"/>
-        <line num="37" count="3" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="41" count="7" type="stmt"/>
-        <line num="42" count="7" type="stmt"/>
-        <line num="43" count="7" type="stmt"/>
-        <line num="44" count="7" type="stmt"/>
-        <line num="45" count="35" type="stmt"/>
-        <line num="47" count="7" type="stmt"/>
+        <line num="36" count="6" type="cond" truecount="0" falsecount="1"/>
+        <line num="37" count="6" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="10" type="stmt"/>
+        <line num="42" count="10" type="stmt"/>
+        <line num="43" count="10" type="stmt"/>
+        <line num="44" count="10" type="stmt"/>
+        <line num="45" count="49" type="stmt"/>
+        <line num="47" count="10" type="stmt"/>
       </file>
     </package>
     <package name="src.services">
-      <metrics statements="75" coveredstatements="73" conditionals="30" coveredconditionals="25" methods="21" coveredmethods="20"/>
+      <metrics statements="75" coveredstatements="73" conditionals="30" coveredconditionals="26" methods="21" coveredmethods="20"/>
       <file name="carService.ts" path="C:\Users\Mina\Desktop\Aubrey\Missions\TurnersRestfulAPI\src\services\carService.ts">
-        <metrics statements="35" coveredstatements="35" conditionals="12" coveredconditionals="10" methods="11" coveredmethods="11"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="10" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="23" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="30" count="4" type="stmt"/>
-        <line num="31" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="43" count="4" type="stmt"/>
-        <line num="44" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="48" count="1" type="cond" truecount="3" falsecount="1"/>
-        <line num="49" count="1" type="cond" truecount="3" falsecount="1"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
-        <line num="56" count="3" type="stmt"/>
-        <line num="57" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="58" count="1" type="stmt"/>
-        <line num="60" count="2" type="stmt"/>
-        <line num="61" count="1" type="stmt"/>
+        <metrics statements="35" coveredstatements="35" conditionals="12" coveredconditionals="11" methods="11" coveredmethods="11"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="11" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="23" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="8" type="stmt"/>
+        <line num="31" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="43" count="8" type="stmt"/>
+        <line num="44" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="48" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="49" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="52" count="2" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="56" count="6" type="stmt"/>
+        <line num="57" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="60" count="4" type="stmt"/>
+        <line num="61" count="2" type="stmt"/>
       </file>
       <file name="quote.ts" path="C:\Users\Mina\Desktop\Aubrey\Missions\TurnersRestfulAPI\src\services\quote.ts">
         <metrics statements="40" coveredstatements="38" conditionals="18" coveredconditionals="15" methods="10" coveredmethods="9"/>
