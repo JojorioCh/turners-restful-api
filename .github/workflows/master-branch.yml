@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  PROJECT_ID: turners-api # TODO: update Google Cloud project id
+  PROJECT_ID: turners-car-live # TODO: update Google Cloud project id
   SERVICE: turners-api # TODO: update Cloud Run service name
   REGION: australia-southeast2 # TODO: update Cloud Run service region
 
