@@ -1,8 +1,7 @@
 import * as quoteController from '../../controller/quoteController';
 import { createRequest, createResponse } from 'node-mocks-http';
-
 describe('getAllQuotes', () => {
-	test('should send all quotes via response', () => {
+	test('should retrieve all quotes and send them in the response', () => {
 		// Arrange
 		const req = createRequest();
 		const res = createResponse();
@@ -25,7 +24,7 @@ describe('getAllQuotes', () => {
 });
 
 describe('getOneQuote', () => {
-	test('should get car record of id 1', () => {
+	test('should retrieve the car record of the specified id', () => {
 		// Arrange
 		const req = createRequest();
 		const res = createResponse();
@@ -47,7 +46,7 @@ describe('getOneQuote', () => {
 		expect(res.json()._getData()).toEqual(expected);
 	});
 
-	test('should return an error if id parameter is 999', () => {
+	test('should return an error if the id parameter is invalid', () => {
 		// Arrange
 		const req = createRequest();
 		const res = createResponse();
@@ -63,7 +62,7 @@ describe('getOneQuote', () => {
 });
 
 describe('createAQuote', () => {
-	test('should add a new quote record', () => {
+	test('should add a new quote record and send it in the response', () => {
 		// Arrange
 		const req = createRequest();
 		const res = createResponse();
@@ -87,8 +86,8 @@ describe('createAQuote', () => {
 	});
 });
 
-describe('updateCar', () => {
-	test('should add a new car record', () => {
+describe('updateAQuote', () => {
+	test('should update the specified quote record and send the updated record in the response', () => {
 		// Arrange
 		const req = createRequest();
 		const res = createResponse();
@@ -111,7 +110,7 @@ describe('updateCar', () => {
 		expect(res.json()._getData()).toEqual(expected);
 	});
 
-	test('should return an error if we update a quotewith id 999', () => {
+	test('should return an error if the id parameter is invalid', () => {
 		// Arrange
 		const req = createRequest();
 		const res = createResponse();
@@ -128,7 +127,7 @@ describe('updateCar', () => {
 });
 
 describe('deleteQuote', () => {
-	test('should delete a quote with id 2', () => {
+	test('should delete a quote with id 2 and send a success/true response', () => {
 		// Arrange
 		const req = createRequest();
 		const res = createResponse();
@@ -143,7 +142,7 @@ describe('deleteQuote', () => {
 		expect(res.json()._getData()).toEqual(expected);
 	});
 
-	test('should return an error if we delete a quote with id 999', () => {
+	test('should return an error if the id parameter is invalid', () => {
 		// Arrange
 		const req = createRequest();
 		const res = createResponse();

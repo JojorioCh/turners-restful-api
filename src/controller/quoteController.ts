@@ -8,7 +8,7 @@ export const getAllQuotes = (req: Request, res: Response) => {
 };
 
 export const createAQuote = (req: Request, res: Response) => {
-	try{
+	try {
 		const input = {
 			carValue: req.body.carValue,
 			riskRating: req.body.riskRating,
@@ -46,7 +46,7 @@ export const updateAQuote = (req: Request, res: Response) => {
 		const quoteId = parseInt(req.params.id);
 		const input = {
 			carValue: req.body.carValue,
-			riskRating: req.body.riskRating
+			riskRating: req.body.riskRating,
 		};
 
 		const updatedQuote = quoteGenerator.updateAQuote(quoteId, input);
