@@ -1,7 +1,6 @@
 /* eslint-disable linebreak-style */
 import { Request, Response } from 'express';
 import * as quoteGenerator from '../services/quoteService';
-import { valueInput } from '../types/Interface';
 
 export const getAllQuotes = (req: Request, res: Response) => {
 	const quotes = quoteGenerator.getAllQuotes();
@@ -10,7 +9,7 @@ export const getAllQuotes = (req: Request, res: Response) => {
 
 export const createAQuote = (req: Request, res: Response) => {
 	try{
-		const input: valueInput = {
+		const input = {
 			carValue: req.body.carValue,
 			riskRating: req.body.riskRating,
 		};
@@ -45,11 +44,9 @@ export const deleteAQuote = (req: Request, res: Response) => {
 export const updateAQuote = (req: Request, res: Response) => {
 	try {
 		const quoteId = parseInt(req.params.id);
-		const carValue = req.body.carValue;
-		const riskRating = req.body.riskRating;
 		const input = {
-			carValue: carValue,
-			riskRating: riskRating
+			carValue: req.body.carValue,
+			riskRating: req.body.riskRating
 		};
 
 		const updatedQuote = quoteGenerator.updateAQuote(quoteId, input);
