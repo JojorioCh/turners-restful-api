@@ -1,8 +1,8 @@
 import app from '../../app'
 import request from 'supertest'
 
-describe('RiskRating API', () => {
-  it('should all risk rating records predefined value', async () => {
+describe('Quote API', () => {
+  it('should all quote records predefined value', async () => {
     // Arrange
     const expected = [
       {

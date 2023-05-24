@@ -34,9 +34,9 @@ export const deleteAQuote = (req: Request, res: Response) => {
   try {
     const quoteDeleted = quoteGenerator.deleteAQuote(quoteId)
     if (quoteDeleted) {
-      res.send(`Task ${quoteId} deleted successfully!`)
+      res.send(`Quote ID ${quoteId} deleted successfully!`)
     } else {
-      res.status(500).send(`Task ${quoteId} deletion failed!`)
+      res.status(500).send(`Quote ID ${quoteId} deletion failed!`)
     }
   } catch (e) {
     res.status(404).send(e)

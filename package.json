@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsnd src/server.ts",
     "test": "jest",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "npm run build && node build/server.js"
   },
   "keywords": [],
   "author": "Joseph Chang and Aubrey Mina",
@@ -16,6 +17,10 @@
     "@types/jest": "^29.5.1",
     "@types/node": "^20.1.7",
     "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "eslint": "^8.40.0",
+    "eslint-plugin-react": "^7.32.2",
     "jest": "^29.5.0",
     "node-mocks-http": "^1.12.2",
     "supertest": "^6.3.3",

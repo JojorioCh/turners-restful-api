@@ -3,11 +3,11 @@ name: Build, Test, and Deploy
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 env:
-  PROJECT_ID: # TODO: update Google Cloud project id
-  SERVICE: turners-api # TODO: update Cloud Run service name
+  PROJECT_ID: turners-api # TODO: update Google Cloud project id
+  SERVICE: turners # TODO: update Cloud Run service name
   REGION: australia-southeast2 # TODO: update Cloud Run service region
 
 jobs:
