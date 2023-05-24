@@ -1,6 +1,6 @@
 import express from 'express'
 import * as carController from '../controller/carController'
-import * as quoteApiControl from '../controller/quoteApiControl'
+import * as quoteApiControl from '../controller/quoteController'
 
 const router = express.Router()
 

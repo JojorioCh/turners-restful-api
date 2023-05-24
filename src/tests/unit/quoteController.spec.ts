@@ -1,4 +1,4 @@
-import * as quoteController from '../../controller/quoteApiControl'
+import * as quoteController from '../../controller/quoteController'
 import { createRequest, createResponse } from 'node-mocks-http'
 
 describe('getAllQuotes', () => {
