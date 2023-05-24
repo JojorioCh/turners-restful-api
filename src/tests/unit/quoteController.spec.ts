@@ -1,6 +1,5 @@
 import * as quoteController from '../../controller/quoteController';
 import { createRequest, createResponse } from 'node-mocks-http';
-
 describe('getAllQuotes', () => {
 	test('should retrieve all quotes and send them in the response', () => {
 		// Arrange
