@@ -1,5 +1,6 @@
 import * as carController from '../../controller/carController'
 import { createRequest, createResponse } from 'node-mocks-http'
+import { TestModelYear } from '../../types/Interface'
 
 describe('getAllCars', () => {
   test('should send all car via response', () => {
@@ -65,6 +66,36 @@ describe('addCar', () => {
     //Assert
     expect(res.statusCode).toBe(200)
     expect(res.json()._getData()).toEqual(expected)
+  })
+
+  const testCases: TestModelYear[] = [
+    {
+      model: 'C1vic',
+      year: 2014,
+      expected:
+        'Please input a valid model. A string of alphabet with no spaces is accepted.',
+    },
+    {
+      model: 'Civic',
+      year: 2050,
+      expected: 'Please input a valid year from 1950 to 2023',
+    },
+  ]
+
+  testCases.map((tc) => {
+    test(`Model: ${tc.model} Year: ${tc.year} should return an Error: ${tc.expected}`, () => {
+      const req = createRequest()
+      const res = createResponse()
+      const expected = tc.expected
+
+      // Act
+      req.body.model = tc.model
+      req.body.year = tc.year
+      carController.addCar(req, res)
+
+      expect(res.statusCode).toBe(404)
+      expect(res.json()._getData()).toEqual(expected)
+    })
   })
 })
 
