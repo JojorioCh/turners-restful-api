@@ -132,7 +132,7 @@ describe('deleteQuote', () => {
 		// Arrange
 		const req = createRequest();
 		const res = createResponse();
-		const expected = 'Quote ID 2 deleted successfully!';
+		const expected = 'true';
 
 		// Act
 		req.params.id = '2';
@@ -140,7 +140,7 @@ describe('deleteQuote', () => {
 
 		//Assert
 		expect(res.statusCode).toBe(200);
-		expect(res.json()._getData()).toEqual(expected);
+		expect(res.json()._getData()).toBe(expected);
 	});
 
 	test('should return an error if we delete a quote with id 999', () => {
