@@ -132,7 +132,7 @@ describe('deleteQuote', () => {
     // Arrange
     const req = createRequest()
     const res = createResponse()
-    const expected = 'Quote ID 2 deleted successfully!'
+    const expected = 'true'
 
     // Act
     req.params.id = '2'
