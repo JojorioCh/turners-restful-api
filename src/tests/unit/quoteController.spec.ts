@@ -1,8 +1,8 @@
 import * as quoteController from '../../controller/quoteApiControl'
 import { createRequest, createResponse } from 'node-mocks-http'
 
-describe('getAllCars', () => {
-  test('should send all car via response', () => {
+describe('getAllQuotes', () => {
+  test('should send all quotes via response', () => {
     // Arrange
     const req = createRequest()
     const res = createResponse()
