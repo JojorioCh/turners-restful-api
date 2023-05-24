@@ -7,7 +7,7 @@
     "dev": "tsnd src/server.ts",
     "test": "jest",
     "build": "tsc",
-    "start": "node run build && build/server.js"
+    "start": "node build/server.js"
   },
   "keywords": [],
   "author": "Joseph Chang and Aubrey Mina",
