@@ -140,7 +140,7 @@ describe('deleteQuote', () => {
 
 		//Assert
 		expect(res.statusCode).toBe(200);
-		expect(res.json()._getData()).toBe(expected);
+		expect(res.json()._getData()).toEqual(expected);
 	});
 
 	test('should return an error if we delete a quote with id 999', () => {
