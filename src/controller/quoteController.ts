@@ -4,9 +4,14 @@ import * as quoteGenerator from '../services/quoteService';
 import { valueInput } from '../types/Interface';
 
 export const getAllQuotes = (req: Request, res: Response) => {
-	const quotes = quoteGenerator.getAllQuotes();
-	res.send(quotes);
-};
+	try{
+		const quotes = quoteGenerator.getAllQuotes();
+		res.send(quotes);
+	}
+	catch (e) {res.status(500).send(e);
+	}
+}
+;
 
 export const createAQuote = (req: Request, res: Response) => {
 	try{

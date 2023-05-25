@@ -10,7 +10,7 @@ let quotes: Quote[] = [
 	},
 ];
 
-export const getAllQuotes = () => {
+export const getAllQuotes = (): Quote[] => {
 	return quotes;
 };
 
@@ -23,15 +23,15 @@ export const annualPrem = (input: valueInput): number => {
 	} else if (carValue === 0 || riskRating === 0) {
 		throw new Error('Invalid input value(s): Zero is not allowed');
 	}
-	const yPrem2Decimals = Math.round(((carValue * riskRating) / 100) * 100) / 100;
-	return yPrem2Decimals;
+	const yPrem2Decimals = ((carValue * riskRating) / 100).toFixed(2);
+	return Number(yPrem2Decimals);
 };
 
 export const monthlyPrem = (input: valueInput): number => {
 	const yearlyPremium = annualPrem(input);
-	const mPrem2Decimals = Math.round((yearlyPremium / 12) * 100) / 100;
+	const mPrem2Decimals = (yearlyPremium / 12).toFixed(2);
 
-	return mPrem2Decimals;
+	return Number(mPrem2Decimals);
 };
 
 export const createAQuote = (input: valueInput) => {
