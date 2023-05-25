@@ -1,15 +1,21 @@
 /* eslint-disable linebreak-style */
 import { Request, Response } from 'express';
 import * as quoteGenerator from '../services/quoteService';
+import { valueInput } from '../types/Interface';
 
 export const getAllQuotes = (req: Request, res: Response) => {
-	const quotes = quoteGenerator.getAllQuotes();
-	res.send(quotes);
-};
+	try{
+		const quotes = quoteGenerator.getAllQuotes();
+		res.send(quotes);
+	}
+	catch (e) {res.status(500).send(e);
+	}
+}
+;
 
 export const createAQuote = (req: Request, res: Response) => {
-	try {
-		const input = {
+	try{
+		const input: valueInput = {
 			carValue: req.body.carValue,
 			riskRating: req.body.riskRating,
 		};
@@ -44,9 +50,11 @@ export const deleteAQuote = (req: Request, res: Response) => {
 export const updateAQuote = (req: Request, res: Response) => {
 	try {
 		const quoteId = parseInt(req.params.id);
+		const carValue = req.body.carValue;
+		const riskRating = req.body.riskRating;
 		const input = {
-			carValue: req.body.carValue,
-			riskRating: req.body.riskRating,
+			carValue: carValue,
+			riskRating: riskRating
 		};
 
 		const updatedQuote = quoteGenerator.updateAQuote(quoteId, input);

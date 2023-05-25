@@ -3,24 +3,25 @@ export const computeValue = (model: string, year: number) => {
 	const yr = checkYear(year);
 
 	if (typeof mdl !== 'number' || typeof yr !== 'number') {
-		throw 'Make sure to input model (string) and year (number) correctly.';
+		throw new Error(
+			'Make sure to input model (string) and year (number) correctly.'
+		);
 	}
 
 	const result = mdl + yr;
 
-	if (!result) {
-		throw 'Make sure to input model and year correctly.';
+	if (isNaN(result)) {
+		throw new Error('Make sure to input model and year correctly.');
 	}
 
-	if (result === Infinity) {
+	if (result === Infinity || result === -Infinity) {
 		throw new RangeError('The result is infinity');
 	}
-
 	return result;
 };
 
 const checkModel = (str: string) => {
-	if (str === '') throw 'Model is empty.';
+	if (str === '') throw new Error('Model is empty.');
 	if (typeof str === 'string' && /^[a-zA-Z]+$/.test(str)) {
 		return str;
 	} else {
