@@ -10,7 +10,7 @@ let quotes: Quote[] = [
 	},
 ];
 
-export const getAllQuotes = () => {
+export const getAllQuotes = (): Quote[] => {
 	return quotes;
 };
 
